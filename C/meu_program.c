@@ -10,8 +10,9 @@ int main() {
 
     printf("Digite sua idade: \n");
     scanf("%d", &idade);
+    getchar();
     printf("Digite seu Nome: \n");
-    scanf("%s", nome);
+    fgets(nome, 20, stdin);
     printf("digite sua Altura: \n");
     scanf("%f", &altura);
     printf("Digite sua opção: \n");
@@ -19,7 +20,7 @@ int main() {
 
 
     printf("Sua idade é %d\n", idade);
-    printf("seu Nome %s\n", nome);
+    printf("seu Nome %s", nome);
     printf("Sua altura é %.2f\n", altura);
     printf("Sua opção é %c\n", opcao);
     
