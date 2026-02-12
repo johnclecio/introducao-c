@@ -20,7 +20,7 @@ int main() {
 
     printf("Sua idade é %d\n", idade);
     printf("seu Nome %s\n", nome);
-    printf("Sua altura é %f\n", altura);
+    printf("Sua altura é %.2f\n", altura);
     printf("Sua opção é %c\n", opcao);
     
     
