@@ -21,27 +21,46 @@ operadores matemáticos e funções de entrada e saída. Siga o passo a passo pa
 
 */
 int main(){
-    char nomeAluno[40];
-    int idade, matricula;
-    float altura;
+      char nomeAluno[40];
+      int idade, matricula;
+      float altura;
+      float notas [3];
+      float soma = 0;
+      float media;
 
-    printf("digite Nome: \n");
-    fgets(nomeAluno, 40, stdin);
+       printf("digite Nome: \n");
+       fgets(nomeAluno, 40, stdin);
     
 
-    printf("Digite sua Idade: \n");
-    scanf("%d", &idade);
+       printf("Digite sua Idade: \n");
+       scanf("%d", &idade);
 
-    printf("digite sua Altura: \n");
-    scanf("%f", &altura);
+       printf("digite sua Altura: \n");
+       scanf("%f", &altura);
 
-    printf("Digite sua Matricula: \n");
-    scanf("%d", &matricula);
+       printf("Digite sua Matricula: \n");
+       scanf("%d", &matricula);
 
-   
-    printf("Seu Nome %s", nomeAluno);
-    printf("Sua idade: %d - Sua Altura %.2f\n", idade, altura);
-    printf("Sua Matricula %d\n", matricula);
+
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("digite sua nota %d: \n", i + 1);
+        scanf("%f", &notas[i]);
+
+        soma += notas[i];
+        
+        
+    }
+
+        media = soma / 3;
+
+    
+  
+      printf("Seu Nome %s", nomeAluno);
+      printf("Sua idade: %d - Sua Altura %.2f\n", idade, altura);
+      printf("Sua Matricula %d\n", matricula);
+      printf("Sua média %.2f", media);
 
     return 0;
     
