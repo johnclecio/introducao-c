@@ -7,7 +7,7 @@ struct Carta {
     char codigoCarta[10];
     char nomeCidade[60];
     int populacao;
-    double areaDaCidade;
+    float areaDaCidade;
     float pib;
     int pontosTuristicos;
     float densidadePopulacional;
@@ -41,7 +41,7 @@ int main(){
         scanf("%d", &cartas[i].populacao);
 
         printf("Área (em km²):\n");
-        scanf("%lf", &cartas[i].areaDaCidade);
+        scanf("%f", &cartas[i].areaDaCidade);
 
         printf("PIB:\n");
         scanf("%f", &cartas[i].pib);
