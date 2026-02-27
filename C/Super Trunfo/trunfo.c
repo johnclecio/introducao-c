@@ -7,9 +7,11 @@ struct Carta {
     char codigoCarta[10];
     char nomeCidade[60];
     int populacao;
-    float areaDaCidade;
+    double areaDaCidade;
     float pib;
     int pontosTuristicos;
+    float densidadePopulacional;
+    float pibPer;
     
 };
 
@@ -39,13 +41,17 @@ int main(){
         scanf("%d", &cartas[i].populacao);
 
         printf("Área (em km²):\n");
-        scanf("%f", &cartas[i].areaDaCidade);
+        scanf("%lf", &cartas[i].areaDaCidade);
 
         printf("PIB:\n");
         scanf("%f", &cartas[i].pib);
 
         printf("Número de Pontos Turísticos:\n");
         scanf("%d", &cartas[i].pontosTuristicos);
+        getchar();
+
+        cartas[i].densidadePopulacional = (float)cartas[i].populacao / (float)cartas[i].areaDaCidade;
+        cartas[i].pibPer = (cartas[i].pib * 1000000000) / cartas[i].populacao;
     }
 
     for(int j = 0; j < 2; j++){
@@ -58,6 +64,14 @@ int main(){
         printf("Área: %.2f km²\n", cartas[j].areaDaCidade);
         printf("PIB: %.2f bilhões de reais\n", cartas[j].pib);
         printf("Número de Pontos Turísticos: %d\n", cartas[j].pontosTuristicos);
+        printf("Densidade Populacional: %.2f hab/km²\n", cartas[j].densidadePopulacional);
+        printf("PIB per Capita: %.2f reais\n", cartas[j].pibPer);
+
+        //PIB per Capita: reais
+
+     
+
+
 
     }
 
