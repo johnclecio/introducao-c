@@ -44,3 +44,33 @@ Número de Pontos Turísticos: 30
 Densidade Populacional: 5622.24 hab/km²
 
 PIB per Capita: 44532.91 reais
+
+
+Calcular a Densidade Populacional e o
+ PIB per Capita: Assim como no nível 
+ intermediário, calcule e armazene esses 
+ valores.
+
+população, área, PIB, número de pontos turísticos,
+ PIB per capita e o inverso da densidade populacional 
+ – quanto menor a densidade, maior o "poder
+
+ Exemplo de Saída (após a entrada dos dados):
+
+ 
+
+Comparação de Cartas:
+
+População: Carta 1 venceu (1)
+
+Área: Carta 1 venceu (1)
+
+PIB: Carta 1 venceu (1)
+
+Pontos Turísticos: Carta 1 venceu (1)
+
+Densidade Populacional: Carta 2 venceu (0)
+
+PIB per Capita: Carta 1 venceu (1)
+
+Super Poder: Carta 1 venceu (1)
