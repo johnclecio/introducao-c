@@ -1,72 +1,124 @@
 // Movimentando as Peças do Xadrez - Nível Novato
 #include <stdio.h>
 
+
+
+// Procedimento 
+// 1. TORRE - usando IF e Recursividade
+// Movimento: 5 casas para a direita
+void MovimentoTorre(int casasTorre){
+    if(casasTorre > 0){
+        MovimentoTorre(casasTorre - 1);
+        printf("Direita\n");
+    }
+}
+
+
+// 2. BISPO - usando WHILE
+// Movimento: 5 casas na diagonal cima + direita
+void MovimentoBispo(int casasBispo){
+
+    if(casasBispo > 0){
+
+        int vertical, horizontal;
+
+        // Loop externo
+        for(vertical = 0; vertical < 1; vertical++){
+
+            // Loop interno
+            for(horizontal = 0; horizontal < 1; horizontal++){
+
+                printf("Cima Direita\n");
+            }
+        }
+
+        MovimentoBispo(casasBispo - 1);
+    }
+}
+
+// 3. RAINHA - usando DO-WHILE
+// Movimento: 8 casas para a esquerda
+void MovimentoRainha(int casasRainha){
+    if(casasRainha > 0){
+        printf("Esquerda\n");
+        MovimentoRainha(casasRainha - 1);
+    }
+}
+
+
+// 4. CAVALO - usando FOR
+// Movimento: 2 casas para a BAIXO
+// usando While 1 casa para esquerda
+void MovimentoCavalo(){
+
+    int cima, direita;
+
+    // Loop externo
+    for(cima = 1; cima <= 2; cima++){
+
+        printf("Cima\n");
+
+        // Quando terminar as 2 casas
+        if(cima == 2){
+
+            // Loop interno
+            for(direita = 1; direita <= 1; direita++){
+
+                printf("Direita\n");
+
+                break;
+            }
+        }
+    }
+}
+
+void MovimentoPiao(int casasPiao){
+    if(casasPiao > 0){
+        MovimentoPiao(casasPiao - 1);
+        printf("Cima\n");
+    }
+
+}
+
 int main() {
     // Definindo número de casas para cada peça
     int casasTorre = 5;   // Torre: 5 casas para a direita
     int casasBispo = 5;   // Bispo: 5 casas na diagonal cima-direita
     int casasRainha = 8;  // Rainha: 8 casas para a esquerda
     int casasCavalo = 2; // Cavalo: 2 para baixo, 1 para a esquerda
+    int casasPiao = 2;   // Pião : 2 para cima
     
-    int i, j;
+    
 
-    // 1. TORRE - usando FOR
-    // Movimento: 5 casas para a direita
+   
     printf("Movimento da Torre:\n");
-    for (i = 0; i < casasTorre; i++) {
-        printf("Direita\n");
-    }
-
-    printf("\n"); // Linha em branco pra separar
-
-    // 2. BISPO - usando WHILE
-    // Movimento: 5 casas na diagonal cima + direita
-    printf("Movimento do Bispo:\n");
-    i = 0;
-    while (i < casasBispo) {
-        printf("Cima, Direita\n"); // Combinação das duas direções
-        i++;
-    }
-
-    printf("\n"); // Linha em branco pra separar
-
-    // 3. RAINHA - usando DO-WHILE
-    // Movimento: 8 casas para a esquerda
-    printf("Movimento da Rainha:\n");
-    i = 0;
-    do {
-        printf("Esquerda\n");
-        i++;
-    } while (i < casasRainha);
-
+    MovimentoTorre(casasTorre);
 
     printf("\n"); // Linha em branco pra separar
 
     
-     // 4. CAVALO - usando FOR
-    // Movimento: 2 casas para a BAIXO
-    // usando While 1 casa para esquerda
+    printf("Movimento do Bispo:\n");
+    MovimentoBispo(casasBispo);
 
-    int passosEsquerda = 1;
-    printf("Movimento da Cavalo:\n");
-    for(i = 0; i < casasCavalo; i++) {
+    printf("\n"); // Linha em branco pra separar
 
-            printf("Baixo\n");
+    
+    printf("Movimento da Rainha:\n");
+    MovimentoRainha(casasRainha);
 
-            // Quando terminar as 2 casas para baixo
-            // executa o movimento para esquerda
-            if(i == casasCavalo - 1) {
+    printf("\n"); // Linha em branco pra separar
 
-                int esquerda = 0;
+    printf("Movimento do Cavalo:\n");
+    MovimentoCavalo();
 
-                // Loop WHILE aninhado
-                while(esquerda < passosEsquerda) {
+    printf("\n"); // Linha em branco pra separar
 
-                    printf("Esquerda\n");
-                    esquerda++;
-                }
-            }
-        }
+    printf("Movimento do Pião:\n");
+    MovimentoPiao(casasPiao);
+
+
+    
+
     
 
     return 0;
